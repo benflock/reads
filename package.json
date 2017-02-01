@@ -4,7 +4,8 @@
   "description": "Follow literature reels from elite technology instructors and senior developers",
   "main": "app.js",
   "scripts": {
-    "watch": "`npm bin`/nodemon bin/www",
+    "dev": "NODE_ENV=developement `npm bin`/nodemon ./bin/www",
+    "watch": "`npm bin`/nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -28,7 +29,7 @@
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "express-session": "^1.15.0",
-    "handlebars": "^4.0.6",
+    "hbs": "^4.0.1",
     "knex": "^0.12.6",
     "pg": "^6.1.2"
   },

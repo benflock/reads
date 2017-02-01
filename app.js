@@ -27,7 +27,7 @@ app.use(body_parser.urlencoded({
     extended: false
 }));
 app.use(json_parser);
-app.use(cookie_parser);
+app.use(cookie_parser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 //view engine
@@ -35,6 +35,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 
 //routing
+app.use('/', routes);
+app.use('/author', author);
+app.use('/authors', authors);
+app.use('/book', book);
+app.use('/books', books);
+app.use('/genre', genre);
+app.use('/genres', genres);
+app.use('/me', me);
+
 app.use((req, res, next) => {
     let err = new Error('Not Found');
     err.status = 404;
@@ -62,13 +71,5 @@ app.use(function(err, req, res, next) {
     });
 });
 
-app.use('/', routes);
-app.use('/author', author);
-app.use('/authors', authors);
-app.use('/book', book);
-app.use('/books', books);
-app.use('/genre', genre);
-app.use('/genres', genres);
-app.use('/me', me);
 
 module.exports = app;
