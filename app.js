@@ -15,7 +15,8 @@ const routes = require('./routes/index'),
     book = require('./routes/book'),
     books = require('./routes/books'),
     genre = require('./routes/genre'),
-    genres = require('./routes/genres');
+    genres = require('./routes/genres'),
+    me = require('./routes/me');
 
 //middleware
 app.use(body_parser.urlencoded({
@@ -42,5 +43,6 @@ app.use('/book', book);
 app.use('/books', books);
 app.use('/genre', genre);
 app.use('/genres', genres);
+app.user('/me', me);
 
 module.exports = app;
