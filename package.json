@@ -1,0 +1,37 @@
+{
+  "name": "reads",
+  "version": "1.0.0",
+  "description": "Follow literature reels from elite technology instructors and senior developers",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/benflock/reads.git"
+  },
+  "keywords": [
+    "galvanize",
+    "reads",
+    "crud"
+  ],
+  "author": "Ben Flock",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/benflock/reads/issues"
+  },
+  "homepage": "https://github.com/benflock/reads#readme",
+  "dependencies": {
+    "express": "^4.14.1",
+    "express-session": "^1.15.0",
+    "handlebars": "^4.0.6",
+    "knex": "^0.12.6",
+    "pg": "^6.1.2"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+  }
+}
