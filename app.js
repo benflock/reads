@@ -1,6 +1,9 @@
+require('dotenv').config();
+
 //modules
 const express = require('express'),
     path = require('path'),
+    dexter = require('morgan'),
     cookie_parser = require('cookie-parser'),
     body_parser = require('body-parser');
 
@@ -19,6 +22,7 @@ const routes = require('./routes/index'),
     me = require('./routes/me');
 
 //middleware
+app.use(dexter('dev'))
 app.use(body_parser.urlencoded({
     extended: false
 }));
@@ -36,6 +40,28 @@ app.use((req, res, next) => {
     err.status = 404;
     next(err);
 })
+// development error handler
+// will print stacktrace
+if (app.get("env") === "development") {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render("error", {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+// production error handler
+// no stacktraces leaked to user
+app.use(function(err, req, res, next) {
+    res.status(err.status || 500);
+    res.render("error", {
+        message: err.message,
+        error: {}
+    });
+});
+
 app.use('/', routes);
 app.use('/author', author);
 app.use('/authors', authors);
@@ -43,6 +69,6 @@ app.use('/book', book);
 app.use('/books', books);
 app.use('/genre', genre);
 app.use('/genres', genres);
-app.user('/me', me);
+app.use('/me', me);
 
 module.exports = app;
