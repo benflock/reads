@@ -6,4 +6,4 @@ Reads allows you to organize, edit, search, create, and delete books in your lib
 reads-.herokuapp.com
 
 
-![ERD](reads/reads-erd.JPG)
+[ERD](reads/reads-erd.JPG)
