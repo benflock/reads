@@ -1,0 +1,37 @@
+ul {
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+a, a:hover {
+  color: inherit;
+  text-decoration: inherit;
+}
+button {
+  cursor: pointer;
+}
+h3 {
+  margin: 0;
+}
+ul#books {
+  border: .1rem solid rgba(0,0,0,0.1);
+  border-radius: .3rem;
+}
+li.book {
+  padding: 2rem 1rem;
+  border-bottom: .1rem solid rgba(0,0,0,0.1);
+}
+.bookcover img {
+  width: 100%;
+}
+.author img {
+  height: 4rem;
+  width: 4rem;
+  border-radius: 50%;
+  margin-right: 1rem;
+}
+li.author {
+  display: inline-block;
+  margin-right: 3rem;
+}

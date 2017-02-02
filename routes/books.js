@@ -23,6 +23,7 @@ router.get('/', (req, res) => {
                             })
                         })
                     })
+                    console.log(books);
                     res.render('books', {
                         books
                     });
