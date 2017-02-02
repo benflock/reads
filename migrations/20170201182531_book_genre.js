@@ -2,7 +2,7 @@ exports.up = function(knex, Promise) {
     return knex.schema.createTable('book_genre', function(book_genre) {
       book_genre.integer('book').notNullable().references('book.id').onDelete('cascade');
       book_genre.integer('genre').notNullable().references('genre.id').onDelete('cascade');
-      book_genre.unique(['book', 'genre']);
+      book_genre.primary(['book', 'genre']);
     })
 };
 

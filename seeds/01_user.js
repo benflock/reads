@@ -5,6 +5,7 @@ exports.seed = function(knex, Promise) {
             return Promise.all([
                 // Inserts seed entries
                 knex('user').insert({
+                  id: 1,
                     email: 'patrauls@gmail.com',
                     password: 'cute',
                     firstname: 'Patrick',
@@ -19,6 +20,7 @@ exports.seed = function(knex, Promise) {
                     twitter: 'ben_flock'
                 }),
                 knex('user').insert({
+                  id: 2,
                     email: 'caruso@ebeiej.com',
                     password: 'babababa',
                     firstname: 'Chris',
@@ -33,6 +35,7 @@ exports.seed = function(knex, Promise) {
                     twitter: 'ccatchings'
                 }),
                 knex('user').insert({
+                  id: 3,
                     email: 'julietrauls@gmail.com',
                     password: 'julietrauls@gmail.com',
                     firstname: 'Juliet',
@@ -45,7 +48,52 @@ exports.seed = function(knex, Promise) {
                     dribbble: 'jrauls',
                     behance: 'jrauls',
                     twitter: 'jrauls'
-                })
+                }),
+                knex('user').insert({
+                  id: 4,
+                    email: 'angelrauls@gmail.com',
+                    password: 'julietrauls@gmail.com',
+                    firstname: 'Angel',
+                    lastname: 'Rauls',
+                    avatar: '/img/user/1/patty.jpg',
+                    github: 'arauls',
+                    slack: 'arauls',
+                    facebook: 'arauls',
+                    linkedin: 'arauls',
+                    dribbble: 'arauls',
+                    behance: 'arauls',
+                    twitter: 'arauls'
+                }),
+                knex('user').insert({
+                  id: 5,
+                    email: 'chrisrauls@gmail.com',
+                    password: 'julietrauls@gmail.com',
+                    firstname: 'Chris',
+                    lastname: 'Rauls',
+                    avatar: '/img/user/1/patty.jpg',
+                    github: 'crauls',
+                    slack: 'crauls',
+                    facebook: 'crauls',
+                    linkedin: 'crauls',
+                    dribbble: 'crauls',
+                    behance: 'crauls',
+                    twitter: 'crauls'
+                }),
+                knex('user').insert({
+                  id: 6,
+                    email: 'maerauls@gmail.com',
+                    password: 'julietrauls@gmail.com',
+                    firstname: 'Mae',
+                    lastname: 'Rauls',
+                    avatar: '/img/user/1/patty.jpg',
+                    github: 'maerauls',
+                    slack: 'maerauls',
+                    facebook: 'maerauls',
+                    linkedin: 'maerauls',
+                    dribbble: 'maerauls',
+                    behance: 'maerauls',
+                    twitter: 'maerauls'
+                }),
             ]);
         });
 };
