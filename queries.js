@@ -19,11 +19,22 @@ module.exports = {
     get_books() {
         return query.select('*').from('book').orderBy('title', 'ASC');
     },
+    get_books_authors() {
+        return query.select(
+          'author_book.id',
+          'author_book.author',
+          'author_book.book',
+          'author_book.principal',
+          'author.firstname',
+          'author.lastname',
+          'author.bio',
+          'author.portrait'
+        )
+        .from('author_book')
+        .innerJoin('author', 'author_book.author', 'author.id');
+    },
     get_books_by_ids(ids) {
         return query.select('*').from('book').whereIn('id', ids);
-    },
-    get_books_authors() {
-        return query.select('*').from('author_book')
     },
     get_books_genres() {
         return query.select('*').from('book_genre');
