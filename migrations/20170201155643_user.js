@@ -13,6 +13,7 @@ exports.up = function(knex, Promise) {
         user.string('behance');
         user.string('dribbble');
         user.string('linkedin');
+        user.integer('followers').notNullable().defaultTo(0);
         user.unique('email');
     })
 };
