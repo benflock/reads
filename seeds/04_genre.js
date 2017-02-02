@@ -5,9 +5,11 @@ exports.seed = function(knex, Promise) {
             return Promise.all([
                 // Inserts seed entries
                 knex('genre').insert({
+                    id: 1,
                     title: 'Python'
                 }),
                 knex('genre').insert({
+                    id: 2,
                     title: 'JavaScript'
                 })
             ]);
